@@ -3,11 +3,16 @@ import { shallow } from "enzyme";
 import App from "../App";
 import CommentBox from "../CommentBox";
 import CommentList from "../CommentList";
+import Root from "../../Root";
 
 let wrapped;
 
 beforeEach(() => {
-  wrapped = shallow(<App />);
+  wrapped = shallow(
+    <Root>
+      <App />
+    </Root>
+  );
 });
 
 it("shows a comment box", () => {
